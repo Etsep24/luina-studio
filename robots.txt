@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://luinastudio.pages.dev/sitemap.xml
+com/sitemap.xml

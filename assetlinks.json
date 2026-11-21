@@ -1,0 +1,17 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.aynuremir.app",
+      "sha256_cert_fingerprints": [
+        "69:6E:1A:A0:9B:61:B4:11:93:D6:1A:F7:13:7C:B5:E4:EF:0A:08:A1:E3:79:D0:AE:1B:63:5E:DE:8D:2D:20:20",
+        "C1:F7:3C:07:0B:5C:D6:99:10:FF:FC:E1:10:7C:2B:09:D8:D7:73:F0:D9:12:E0:8E:DC:F4:B2:3D:F4:17:35:F7",
+        "84:7F:A8:EB:E4:1A:1D:3D:07:08:E1:91:2A:22:89:AD:53:01:B5:6B:71:D4:5D:0A:2B:3B:C9:87:10:F5:19:9E"
+      ]
+    }
+  }
+]
