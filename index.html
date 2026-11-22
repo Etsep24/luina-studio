@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    
+
     <title>Aynur - Diyanet Ezan Vakti, Sesli Dualar, Kıble & Widget | Luina Apps</title>
     <meta name="description" content="Aynur; Diyanet uyumlu ezan vakitleri, Mişari Raşid el-Afasi sesli duaları, hassas kıble pusulası, 99 Esmaül Hüsna ve kilit ekranı widget'ları sunan modern İslami yaşam rehberidir.">
     <meta name="keywords" content="ezan vakti, namaz vakitleri, kıble pusulası, sesli dualar, esmaül hüsna, diyanet ezan, islami widget, luina apps, aynur">
@@ -11,10 +11,8 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://luinaapps.com/aynur">
 
-    <!-- Favicon (Vektörel SVG) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23143d2b'/%3E%3Cpath d='M68 50A22 22 0 1 1 42 28a25 25 0 0 0 26 22z' fill='%23eab308'/%3E%3Ccircle cx='68' cy='32' r='4.5' fill='%2310b981'/%3E%3C/svg%3E">
 
-    <!-- Open Graph & Twitter -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://luinaapps.com/aynur">
     <meta property="og:title" content="Aynur - İslami Yaşam & Ezan Vakti Rehberi">
@@ -28,7 +26,6 @@
     <meta name="twitter:description" content="Diyanet uyumlu ezan vakitleri ve gelişmiş araçlarla dolu modern mobil uygulama.">
     <meta name="twitter:image" content="https://luinaapps.com/assets/og-aynur-preview.jpg">
 
-    <!-- Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -37,10 +34,8 @@
       gtag('config', 'G-MEASUREMENT_ID', { 'anonymize_ip': true });
     </script>
 
-    <!-- Google reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js?hl=tr" async defer></script>
 
-    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -351,6 +346,7 @@
 
         .nav-links { display: flex; align-items: center; gap: 6px; }
         .nav-links a {
+            display: inline-block;
             text-decoration: none;
             color: var(--text-secondary);
             font-size: 14px;
@@ -396,6 +392,54 @@
         @keyframes floatSoft {
             0%, 100% { transform: translate3d(0, 0, 0); }
             50% { transform: translate3d(0, -4px, 0); }
+        }
+
+        /* Özel 404 Sayfası Görünümü */
+        .not-found-view {
+            display: none;
+            padding: 60px 10px;
+        }
+        .not-found-view.active {
+            display: block;
+            animation: screenSlideIn 0.35s ease forwards;
+        }
+        .not-found-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            padding: 48px 32px;
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: var(--glass-shadow);
+        }
+        .not-found-code {
+            font-size: clamp(64px, 12vw, 108px);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 14px;
+            background: linear-gradient(135deg, #143d2b, #10b981, #eab308);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .not-found-card h2 {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--emerald-dark);
+            margin-bottom: 12px;
+        }
+        .not-found-card p {
+            font-size: 15.5px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            max-width: 540px;
+            margin: 0 auto 28px auto;
+        }
+        .not-found-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
         }
 
         .hero {
@@ -463,6 +507,8 @@
             font-size: 15px;
             font-weight: 800;
             text-decoration: none;
+            border: none;
+            cursor: pointer;
             box-shadow: 0 10px 25px rgba(20, 61, 43, 0.28);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
@@ -484,6 +530,7 @@
             font-size: 15px;
             font-weight: 800;
             text-decoration: none;
+            cursor: pointer;
             box-shadow: var(--glass-shadow);
             transition: transform 0.25s ease, background 0.25s ease;
         }
@@ -917,6 +964,47 @@
         .esma-text-col p { font-size: 11.5px; color: #64748b; font-weight: 600; line-height: 1.35; }
         .esma-arabic-right { font-size: 21px; font-weight: 700; color: #143d2b; flex-shrink: 0; }
 
+        /* Zikirmatik Kartı (Ana Sayfa Altında Hızlı Erişim) */
+        .dhikr-mini-card {
+            background: #ffffff;
+            border-radius: 22px;
+            padding: 18px;
+            margin-top: 14px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.03);
+            text-align: center;
+        }
+        .dhikr-count-display {
+            font-size: 32px;
+            font-weight: 900;
+            color: #143d2b;
+            margin: 6px 0 12px 0;
+        }
+        .dhikr-btns {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .dhikr-tap-btn {
+            background: linear-gradient(135deg, #143d2b, #10b981);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 13.5px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        .dhikr-reset-btn {
+            background: #f1f5f9;
+            color: #475569;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
         .phone-bottom-nav {
             position: absolute; bottom: 12px; left: 14px; right: 14px; background: rgba(255, 255, 255, 0.98);
             border-radius: 24px; padding: 8px 10px; display: grid; grid-template-columns: repeat(4, 1fr);
@@ -1043,6 +1131,12 @@
         }
 
         .company-details-list li { display: flex; align-items: center; gap: 8px; }
+
+        footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13.5px;
+        }
 
         .footer-links {
             display: flex;
@@ -1257,9 +1351,8 @@
     <div class="particles-layer" id="particlesLayer"></div>
 
     <div class="container">
-        <!-- Header -->
         <header>
-            <a href="#" class="logo-area" aria-label="Luina Apps Studio Ana Sayfa">
+            <a href="#top" class="logo-area" aria-label="Luina Apps Studio Ana Sayfa" onclick="exit404View(event)">
                 <div class="studio-badge">L</div>
                 <div class="logo-text">
                     <h1>Luina Apps Studio</h1>
@@ -1267,10 +1360,10 @@
                 </div>
             </a>
             <nav class="nav-links">
-                <a href="#aynur">Aynur</a>
-                <a href="#canli-arayuz">Canlı Önizleme</a>
-                <a href="#tum-ozellikler">Tüm Özellikler</a>
-                <a href="#iletisim">İletişim</a>
+                <a href="#aynur" onclick="exit404View()">Aynur</a>
+                <a href="#canli-arayuz" onclick="exit404View()">Canlı Önizleme</a>
+                <a href="#tum-ozellikler" onclick="exit404View()">Tüm Özellikler</a>
+                <a href="#iletisim" onclick="exit404View()">İletişim</a>
                 <div class="status-pill">
                     <span class="status-dot"></span>
                     Google Play'de Yayında
@@ -1278,458 +1371,482 @@
             </nav>
         </header>
 
-        <!-- Hero -->
-        <section class="hero scroll-card">
-            <div class="hero-badge">🕌 Diyanet Uyumlu Ezan Vakitleri, Sesli Dualar, Kıble & Widget</div>
-            <h2>Modern Yaşamda Maneviyat <span>Her An Yanınızda</span></h2>
-            <p>Luina Apps Studio imzasını taşıyan <strong>Aynur</strong> ile namaz vakitlerini kaçırmayın; widget desteği, sesli sureler ve hassas kıble pusulasıyla ibadetlerinizi huzurla tamamlayın.</p>
-            
-            <div class="hero-cta-group">
-                <a href="https://play.google.com/store/apps/details?id=com.aynuremir.app" class="hero-primary-btn ripple-btn" target="_blank" rel="noopener noreferrer">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.442 1.442 0 0 1-.61-1.186V3c0-.495.22-.942.609-1.186zM15.207 13.414l2.121 2.121-11.455 6.615c-.477.276-1.071.196-1.458-.191l10.792-8.545zm0-2.828L4.415 2.041c.387-.387.981-.467 1.458-.191l11.455 6.615-2.121 2.121zm1.414 1.414l3.536 2.041c.773.446.773 1.171 0 1.617l-3.536 2.041-2.121-2.121 2.121-2.121z"/></svg>
-                    Google Play'den Ücretsiz İndir
-                </a>
-                <a href="#canli-arayuz" class="hero-secondary-btn ripple-btn">
-                    <span>📱</span> Canlı Test Et
-                </a>
-            </div>
-        </section>
-
-        <!-- İstatistik Barı -->
-        <div class="stats-bar">
-            <div class="stat-item scroll-card glow-card">
-                <div class="stat-number">Diyanet API</div>
-                <div class="stat-label">81 İl & Dünya Geneli Ezan Vakitleri</div>
-            </div>
-            <div class="stat-item scroll-card glow-card">
-                <div class="stat-number">Sesli Tilavet</div>
-                <div class="stat-label">Mişari Raşid el-Afasi Seslendirmesi</div>
-            </div>
-            <div class="stat-item scroll-card glow-card">
-                <div class="stat-number">99 Esma</div>
-                <div class="stat-label">Detaylı Anlam & Zikir Adetleri</div>
-            </div>
-            <div class="stat-item scroll-card glow-card">
-                <div class="stat-number">Canlı Kıble</div>
-                <div class="stat-label">Hassas Pusula & Mesafe Hesabı</div>
-            </div>
-            <div class="stat-item scroll-card glow-card">
-                <div class="stat-number">Akıllı Widget</div>
-                <div class="stat-label">Göz Yormayan Kilit & Ana Ekran</div>
-            </div>
-            <div class="stat-item scroll-card glow-card">
-                <div class="stat-number">+15 Özellik</div>
-                <div class="stat-label">Zikirmatik, Günlük Görevler & Takvim</div>
-            </div>
-        </div>
-
-        <!-- Aynur Tanıtım Kartı -->
-        <div id="aynur" class="apps-showcase">
-            <div class="app-card featured-card scroll-card glow-card">
-                <div class="app-icon-wrapper">
-                    <div class="icon-ring-anim">
-                        <img src="Aynur.png" alt="Aynur İslami Yaşam ve Ezan Vakti Resmi Uygulama Simgesi" class="app-icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' rx=\'24\' fill=\'%23143d2b\'/><circle cx=\'50\' cy=\'50\' r=\'35\' fill=\'%23eab308\' opacity=\'0.2\'/><text x=\'50\' y=\'63\' font-size=\'44\' text-anchor=\'middle\' fill=\'%23eab308\' font-family=\'sans-serif\' font-weight=\'bold\'>A</text></svg>'">
-                    </div>
-                    <div class="rating-pill">★★★★★ 5.0 Google Play</div>
-                </div>
-                <div>
-                    <div class="app-tags">
-                        <span class="tag">🕌 Diyanet Ezan Vakitleri</span>
-                        <span class="tag">🔊 Sesli Dualar & Sureler</span>
-                        <span class="tag">🧭 Hassas Kıble Pusulası</span>
-                        <span class="tag">📿 99 Esmaül Hüsna</span>
-                        <span class="tag">📱 Ana Ekran Widget</span>
-                        <span class="tag">🤲 Akıllı Zikirmatik</span>
-                        <span class="tag more-tag">✨ Zengin Özellik Paketi</span>
-                    </div>
-                    <h3>Aynur</h3>
-                    <p>Sıradan bir vakit uygulamasının ötesinde: Ana ekran widget'ları, Mişari Raşid el-Afasi tilavetiyle dualar, 99 Esmaül Hüsna, sensör destekli Kıble bulucu ve günlük görev takipçisiyle ibadet hayatınızı modernize edin.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.aynuremir.app" class="store-badge ripple-btn" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.442 1.442 0 0 1-.61-1.186V3c0-.495.22-.942.609-1.186zM15.207 13.414l2.121 2.121-11.455 6.615c-.477.276-1.071.196-1.458-.191l10.792-8.545zm0-2.828L4.415 2.041c.387-.387.981-.467 1.458-.191l11.455 6.615-2.121 2.121zm1.414 1.414l3.536 2.041c.773.446.773 1.171 0 1.617l-3.536 2.041-2.121-2.121 2.121-2.121z"/></svg>
-                        Google Play'den İndir
+        <!-- Özel 404 Sayfası Görünümü -->
+        <section class="not-found-view" id="notFoundView" aria-live="polite">
+            <div class="not-found-card glow-card">
+                <div class="not-found-code">404</div>
+                <h2>Aradığınız Sayfa Bulunamadı</h2>
+                <p>Bağlantı eski olabilir veya sayfa taşınmış olabilir. Aynur ana sayfasına dönebilir, canlı ezan vakti simülatörünü deneyebilir veya bize ulaşabilirsiniz.</p>
+                <div class="not-found-actions">
+                    <button type="button" class="hero-primary-btn ripple-btn" onclick="exit404View(event)">
+                        🏠 Ana Sayfaya Dön
+                    </button>
+                    <button type="button" class="hero-secondary-btn ripple-btn" onclick="goToSimulatorFrom404()">
+                        🕌 Ezan Vakitlerini Aç
+                    </button>
+                    <a href="https://play.google.com/store/apps/details?id=com.aynuremir.app" class="hero-secondary-btn ripple-btn" target="_blank" rel="noopener noreferrer">
+                        Google Play
                     </a>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Canlı Simülatör -->
-        <div id="canli-arayuz">
-            <h2 class="section-title scroll-card">Aynur Canlı Test & Önizleme Arayüzü</h2>
-            <p class="section-subtitle scroll-card">Uygulamanın çekirdek ekranlarını tarayıcınız üzerinden canlı deneyimleyin.</p>
+        <!-- Ana Site İçeriği -->
+        <div id="mainSiteContent">
+            <section class="hero scroll-card">
+                <div class="hero-badge">🕌 Diyanet Uyumlu Ezan Vakitleri, Sesli Dualar, Kıble & Widget</div>
+                <h2>Modern Yaşamda Maneviyat <span>Her An Yanınızda</span></h2>
+                <p>Luina Apps Studio imzasını taşıyan <strong>Aynur</strong> ile namaz vakitlerini kaçırmayın; widget desteği, sesli sureler ve hassas kıble pusulasıyla ibadetlerinizi huzurla tamamlayın.</p>
 
-            <div class="preview-disclaimer-banner scroll-card" style="margin-bottom: 28px; background: linear-gradient(135deg, #143d2b, #059669); color: white; border-radius: 24px; padding: 20px 26px; display: flex; align-items: center; justify-content: space-between; gap: 20px;">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <div style="font-size: 24px;">ℹ️</div>
-                    <div>
-                        <h4 style="font-size: 16px; font-weight: 800; color: #fde68a;">Canlı Önizleme Modu • Tam Deneyim Aynur Mobil Uygulamasında!</h4>
-                        <p style="font-size: 13.5px; opacity: 0.95;">Bildirim alarmları, kilit ekranı widget'ları ve tam arşiv mobil sürümde etkindir.</p>
-                    </div>
+                <div class="hero-cta-group">
+                    <a href="https://play.google.com/store/apps/details?id=com.aynuremir.app" class="hero-primary-btn ripple-btn" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.442 1.442 0 0 1-.61-1.186V3c0-.495.22-.942.609-1.186zM15.207 13.414l2.121 2.121-11.455 6.615c-.477.276-1.071.196-1.458-.191l10.792-8.545zm0-2.828L4.415 2.041c.387-.387.981-.467 1.458-.191l11.455 6.615-2.121 2.121zm1.414 1.414l3.536 2.041c.773.446.773 1.171 0 1.617l-3.536 2.041-2.121-2.121 2.121-2.121z"/></svg>
+                        Google Play'den Ücretsiz İndir
+                    </a>
+                    <a href="#canli-arayuz" class="hero-secondary-btn ripple-btn">
+                        <span>📱</span> Canlı Test Et
+                    </a>
                 </div>
-                <a href="https://play.google.com/store/apps/details?id=com.aynuremir.app" target="_blank" rel="noopener noreferrer" style="background:#fff; color:#143d2b; text-decoration:none; font-size:13.5px; font-weight:800; padding:12px 22px; border-radius:50px; white-space:nowrap;">
-                    Google Play'e Git
-                </a>
+            </section>
+
+            <div class="stats-bar">
+                <div class="stat-item scroll-card glow-card">
+                    <div class="stat-number">Diyanet API</div>
+                    <div class="stat-label">81 İl & Dünya Geneli Ezan Vakitleri</div>
+                </div>
+                <div class="stat-item scroll-card glow-card">
+                    <div class="stat-number">Sesli Tilavet</div>
+                    <div class="stat-label">Mişari Raşid el-Afasi Seslendirmesi</div>
+                </div>
+                <div class="stat-item scroll-card glow-card">
+                    <div class="stat-number">99 Esma</div>
+                    <div class="stat-label">Detaylı Anlam & Zikir Adetleri</div>
+                </div>
+                <div class="stat-item scroll-card glow-card">
+                    <div class="stat-number">Canlı Kıble</div>
+                    <div class="stat-label">Hassas Pusula & Mesafe Hesabı</div>
+                </div>
+                <div class="stat-item scroll-card glow-card">
+                    <div class="stat-number">Akıllı Widget</div>
+                    <div class="stat-label">Göz Yormayan Kilit & Ana Ekran</div>
+                </div>
+                <div class="stat-item scroll-card glow-card">
+                    <div class="stat-number">+15 Özellik</div>
+                    <div class="stat-label">Zikirmatik, Günlük Görevler & Takvim</div>
+                </div>
             </div>
 
-            <div class="simulator-wrapper">
-                <div class="sim-controls scroll-card glow-card">
-                    <h4>📍 Konum & Test Kontrolü</h4>
-                    <p>Seçtiğiniz ile veya GPS koordinatlarınıza göre Diyanet namaz saatleri ve Kıble açısı otomatik çekilir.</p>
-
-                    <div class="city-selector-box">
-                        <label for="citySelect">Şehir / İlçe Seçin</label>
-                        <select class="city-select" id="citySelect" onchange="onCityChange()">
-                            <option value="40.9901,29.0292,KADIKÖY, İSTANBUL">Kadıköy, İstanbul</option>
-                            <option value="41.0082,28.9784,İSTANBUL">İstanbul (Merkez)</option>
-                            <option value="39.9334,32.8597,ANKARA">Ankara</option>
-                            <option value="38.4237,27.1428,İZMİR">İzmir</option>
-                            <option value="37.7553,39.3167,SİVEREK, ŞANLIURFA">Siverek, Şanlıurfa</option>
-                            <option value="37.1674,38.7955,ŞANLIURFA">Şanlıurfa</option>
-                            <option value="40.1885,29.0610,BURSA">Bursa</option>
-                            <option value="37.8746,32.4932,KONYA">Konya</option>
-                            <option value="36.8969,30.7133,ANTALYA">Antalya</option>
-                            <option value="37.0662,37.3833,GAZİANTEP">Gaziantep</option>
-                            <option value="37.0000,35.3213,ADANA">Adana</option>
-                            <option value="37.9144,40.2306,DİYARBAKIR">Diyarbakır</option>
-                        </select>
-                        <button class="gps-btn ripple-btn" onclick="useRealGPS()">
-                            🎯 Tam Konumumu Kullan
-                        </button>
+            <div id="aynur" class="apps-showcase">
+                <div class="app-card featured-card scroll-card glow-card">
+                    <div class="app-icon-wrapper">
+                        <div class="icon-ring-anim">
+                            <img src="Aynur.png" alt="Aynur İslami Yaşam ve Ezan Vakti Resmi Uygulama Simgesi" class="app-icon" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' rx=\'24\' fill=\'%23143d2b\'/><circle cx=\'50\' cy=\'50\' r=\'35\' fill=\'%23eab308\' opacity=\'0.2\'/><text x=\'50\' y=\'63\' font-size=\'44\' text-anchor=\'middle\' fill=\'%23eab308\' font-family=\'sans-serif\' font-weight=\'bold\'>A</text></svg>'">
+                        </div>
+                        <div class="rating-pill">★★★★★ 5.0 Google Play</div>
                     </div>
-
-                    <div class="screen-switch-list">
-                        <button class="screen-btn active ripple-btn" id="sideBtn-home" onclick="openAppScreen('home')">
-                            🏠 Ana Sayfa (Ezan Vakitleri)
-                        </button>
-                        <button class="screen-btn ripple-btn" id="sideBtn-dualar" onclick="openAppScreen('dualar')">
-                            📖 Dualar & Sureler (Sesli)
-                        </button>
-                        <button class="screen-btn ripple-btn" id="sideBtn-kible" onclick="openAppScreen('kible')">
-                            🧭 Canlı Kıble Pusulası
-                        </button>
-                        <button class="screen-btn ripple-btn" id="sideBtn-esma" onclick="openAppScreen('esma')">
-                            ✨ 99 Esmaül Hüsna
-                        </button>
-                    </div>
-
-                    <div class="sim-side-note">
-                        <strong>💡 Mobil Uygulama:</strong>
-                        Ezan vakti alarmları, widget'lar ve zikirmatik telefonunuzda arka planda kusursuz çalışır.
+                    <div>
+                        <div class="app-tags">
+                            <span class="tag">🕌 Diyanet Ezan Vakitleri</span>
+                            <span class="tag">🔊 Sesli Dualar & Sureler</span>
+                            <span class="tag">🧭 Hassas Kıble Pusulası</span>
+                            <span class="tag">📿 99 Esmaül Hüsna</span>
+                            <span class="tag">📱 Ana Ekran Widget</span>
+                            <span class="tag">🤲 Akıllı Zikirmatik</span>
+                            <span class="tag more-tag">✨ Zengin Özellik Paketi</span>
+                        </div>
+                        <h3>Aynur</h3>
+                        <p>Sıradan bir vakit uygulamasının ötesinde: Ana ekran widget'ları, Mişari Raşid el-Afasi tilavetiyle dualar, 99 Esmaül Hüsna, sensör destekli Kıble bulucu ve günlük görev takipçisiyle ibadet hayatınızı modernize edin.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.aynuremir.app" class="store-badge ripple-btn" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.442 1.442 0 0 1-.61-1.186V3c0-.495.22-.942.609-1.186zM15.207 13.414l2.121 2.121-11.455 6.615c-.477.276-1.071.196-1.458-.191l10.792-8.545zm0-2.828L4.415 2.041c.387-.387.981-.467 1.458-.191l11.455 6.615-2.121 2.121zm1.414 1.414l3.536 2.041c.773.446.773 1.171 0 1.617l-3.536 2.041-2.121-2.121 2.121-2.121z"/></svg>
+                            Google Play'den İndir
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <div class="phone-device scroll-card" id="phoneDeviceBox">
-                    <div class="app-screen active" id="screen-home">
-                        <div class="aynur-top-bar">
-                            <button class="menu-icon-btn" onclick="openAppScreen('esma')" aria-label="Menü">☰</button>
-                            <div class="aynur-mini-logo">🌙</div>
-                            <div class="top-right-circles">
-                                <button class="circle-icon" title="Bildirimler" onclick="showToast('🔔 Bildirim ayarları mobil uygulamada aktiftir.')">🔔</button>
-                                <button class="circle-icon" title="Ayarlar" onclick="openAppScreen('esma')">⚙️</button>
-                            </div>
+            <div id="canli-arayuz">
+                <h2 class="section-title scroll-card">Aynur Canlı Test & Önizleme Arayüzü</h2>
+                <p class="section-subtitle scroll-card">Uygulamanın çekirdek ekranlarını tarayıcınız üzerinden canlı deneyimleyin.</p>
+
+                <div class="preview-disclaimer-banner scroll-card" style="margin-bottom: 28px; background: linear-gradient(135deg, #143d2b, #059669); color: white; border-radius: 24px; padding: 20px 26px; display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <div style="font-size: 24px;">ℹ️</div>
+                        <div>
+                            <h4 style="font-size: 16px; font-weight: 800; color: #fde68a;">Canlı Önizleme Modu • Tam Deneyim Aynur Mobil Uygulamasında!</h4>
+                            <p style="font-size: 13.5px; opacity: 0.95;">Bildirim alarmları, kilit ekranı widget'ları ve tam arşiv mobil sürümde etkindir.</p>
+                        </div>
+                    </div>
+                    <a href="https://play.google.com/store/apps/details?id=com.aynuremir.app" target="_blank" rel="noopener noreferrer" style="background:#fff; color:#143d2b; text-decoration:none; font-size:13.5px; font-weight:800; padding:12px 22px; border-radius:50px; white-space:nowrap;">
+                        Google Play'e Git
+                    </a>
+                </div>
+
+                <div class="simulator-wrapper">
+                    <div class="sim-controls scroll-card glow-card">
+                        <h4>📍 Konum & Test Kontrolü</h4>
+                        <p>Seçtiğiniz ile veya GPS koordinatlarınıza göre Diyanet namaz saatleri ve Kıble açısı otomatik çekilir.</p>
+
+                        <div class="city-selector-box">
+                            <label for="citySelect">Şehir / İlçe Seçin</label>
+                            <select class="city-select" id="citySelect" onchange="onCityChange()">
+                                <option value="40.9901,29.0292,KADIKÖY, İSTANBUL">Kadıköy, İstanbul</option>
+                                <option value="41.0082,28.9784,İSTANBUL">İstanbul (Merkez)</option>
+                                <option value="39.9334,32.8597,ANKARA">Ankara</option>
+                                <option value="38.4237,27.1428,İZMİR">İzmir</option>
+                                <option value="37.7553,39.3167,SİVEREK, ŞANLIURFA">Siverek, Şanlıurfa</option>
+                                <option value="37.1674,38.7955,ŞANLIURFA">Şanlıurfa</option>
+                                <option value="40.1885,29.0610,BURSA">Bursa</option>
+                                <option value="37.8746,32.4932,KONYA">Konya</option>
+                                <option value="36.8969,30.7133,ANTALYA">Antalya</option>
+                                <option value="37.0662,37.3833,GAZİANTEP">Gaziantep</option>
+                                <option value="37.0000,35.3213,ADANA">Adana</option>
+                                <option value="37.9144,40.2306,DİYARBAKIR">Diyarbakır</option>
+                            </select>
+                            <button type="button" class="gps-btn ripple-btn" onclick="useRealGPS()">
+                                🎯 Tam Konumumu Kullan
+                            </button>
                         </div>
 
-                        <div class="greeting-row">
-                            <div class="greeting-text">
-                                <h2>Hayırlı Vakitler</h2>
-                                <div class="hijri-date-text" id="hijriDateDisplay">12 Cemaziyelevvel 1448 • Yükleniyor...</div>
-                            </div>
-                            <div class="location-pill-badge">
-                                📍 <span id="homeCityBadge">KADIKÖY</span>
-                            </div>
+                        <div class="screen-switch-list">
+                            <button type="button" class="screen-btn active ripple-btn" id="sideBtn-home" onclick="openAppScreen('home')">
+                                🏠 Ana Sayfa (Ezan Vakitleri)
+                            </button>
+                            <button type="button" class="screen-btn ripple-btn" id="sideBtn-dualar" onclick="openAppScreen('dualar')">
+                                📖 Dualar & Sureler (Sesli)
+                            </button>
+                            <button type="button" class="screen-btn ripple-btn" id="sideBtn-kible" onclick="openAppScreen('kible')">
+                                🧭 Canlı Kıble Pusulası
+                            </button>
+                            <button type="button" class="screen-btn ripple-btn" id="sideBtn-esma" onclick="openAppScreen('esma')">
+                                ✨ 99 Esmaül Hüsna
+                            </button>
                         </div>
 
-                        <div class="widget-label-center">ANA EKRAN WIDGET ÖNİZLEMESİ</div>
-
-                        <div class="dark-navy-widget" id="navyWidgetCard">
-                            <div class="widget-left">
-                                <div class="moon-gold">🌙</div>
-                                <div class="vakte-kalan-title">VAKTE KALAN</div>
-                                <div class="widget-countdown" id="widgetCountdown">00:27:53</div>
-                                <div id="widgetNextLabel" style="font-size:11px; color:#94a3b8; font-weight:600;">Yatsı 19:40</div>
-                            </div>
-                            <div class="widget-right-cols">
-                                <div class="w-col" id="wcol-Fajr"><span>İMSAK</span><strong id="wtime-Fajr">05:52</strong></div>
-                                <div class="w-col" id="wcol-Dhuhr"><span>ÖĞLE</span><strong id="wtime-Dhuhr">12:53</strong></div>
-                                <div class="w-col" id="wcol-Asr"><span>İKİNDİ</span><strong id="wtime-Asr">15:50</strong></div>
-                                <div class="w-col active-gold" id="wcol-Maghrib"><span>AKŞAM</span><strong id="wtime-Maghrib">18:20</strong><div class="gold-dot"></div></div>
-                                <div class="w-col" id="wcol-Isha"><span>YATSI</span><strong id="wtime-Isha">19:40</strong></div>
-                            </div>
-                        </div>
-
-                        <div class="white-prayer-section" id="whitePrayerSection">
-                            <div class="wp-header"><span style="color:#d97706;">🕒</span> Günün Ezan Vakitleri</div>
-                            <div class="wp-grid-6">
-                                <div class="wp-box" id="box-Fajr"><div class="wp-icon">🌙</div><div class="wp-name">İmsak</div><div class="wp-time" id="btime-Fajr">05:52</div></div>
-                                <div class="wp-box" id="box-Sunrise"><div class="wp-icon">☀️</div><div class="wp-name">Güneş</div><div class="wp-time" id="btime-Sunrise">07:17</div></div>
-                                <div class="wp-box" id="box-Dhuhr"><div class="wp-icon">🔆</div><div class="wp-name">Öğle</div><div class="wp-time" id="btime-Dhuhr">12:53</div></div>
-                                <div class="wp-box" id="box-Asr"><div class="wp-icon">⛅</div><div class="wp-name">İkindi</div><div class="wp-time" id="btime-Asr">15:50</div></div>
-                                <div class="wp-box active-green" id="box-Maghrib"><div class="wp-icon">🌙</div><div class="wp-name">Akşam</div><div class="wp-time" id="btime-Maghrib">18:20</div></div>
-                                <div class="wp-box" id="box-Isha"><div class="wp-icon">🌙</div><div class="wp-name">Yatsı</div><div class="wp-time" id="btime-Isha">19:40</div></div>
-                            </div>
+                        <div class="sim-side-note">
+                            <strong>💡 Mobil Uygulama:</strong>
+                            Ezan vakti alarmları, widget'lar ve zikirmatik telefonunuzda arka planda kusursuz çalışır.
                         </div>
                     </div>
 
-                    <div class="app-screen" id="screen-dualar">
-                        <div class="sub-header-bar">
-                            <button class="menu-icon-btn" onclick="openAppScreen('home')" aria-label="Geri">☰</button>
-                            <h3>Dualar & Sureler</h3>
-                            <div class="circle-icon">👤</div>
-                        </div>
-
-                        <div class="app-search-box">
-                            <span>🔍</span>
-                            <input type="text" id="duaSearchInput" placeholder="Dua, sure veya meal ara..." oninput="filterDuas()">
-                        </div>
-
-                        <div class="category-pills-row">
-                            <button class="cat-pill active" onclick="filterDuaCategory('Tümü', this)">Tümü</button>
-                            <button class="cat-pill" onclick="filterDuaCategory('Namaz', this)">Namaz</button>
-                            <button class="cat-pill" onclick="filterDuaCategory('Sabah', this)">Sabah</button>
-                            <button class="cat-pill" onclick="filterDuaCategory('Akşam', this)">Akşam</button>
-                            <button class="cat-pill" onclick="filterDuaCategory('Korunma', this)">Korunma</button>
-                        </div>
-
-                        <div class="gunun-duasi-card" id="gununDuasiCard">
-                            <div class="gd-top">
-                                <span class="gd-badge">Günün Duası</span>
-                                <span style="color:#143d2b; cursor:pointer;" onclick="showToast('❤️ Favorilere eklendi!')">♡ &nbsp; 🔗</span>
+                    <div class="phone-device scroll-card" id="phoneDeviceBox">
+                        <div class="app-screen active" id="screen-home">
+                            <div class="aynur-top-bar">
+                                <button type="button" class="menu-icon-btn" onclick="openAppScreen('esma')" aria-label="Menü">☰</button>
+                                <div class="aynur-mini-logo">🌙</div>
+                                <div class="top-right-circles">
+                                    <button type="button" class="circle-icon" title="Bildirimler" onclick="showToast('🔔 Bildirim ayarları mobil uygulamada aktiftir.')">🔔</button>
+                                    <button type="button" class="circle-icon" title="Ayarlar" onclick="openAppScreen('esma')">⚙️</button>
+                                </div>
                             </div>
-                            <div class="gd-title" id="activeDuaTitle">Ayetel Kürsi</div>
-                            <div class="gd-arabic" id="activeDuaArabic">
-                                اللّٰهُ لَا إِلٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ
-                            </div>
-                            <div class="gd-okunus" id="activeDuaReading">Okunuşu: Allâhü lâ ilâhe illâ hüvel hayyül kayyûm...</div>
-                            <div class="gd-meal" id="activeDuaMeaning">Meali: Allah, kendisinden başka hiçbir ilah olmayandır. Diridir, her şeyin varlığı O'na bağlıdır.</div>
 
-                            <div class="afasi-player-bar">
-                                <div class="afasi-left">
-                                    <div class="speaker-avatar">🗣️</div>
-                                    <div class="afasi-info">
-                                        <h5><span id="playerTrackTitle">Ayetel Kürsi</span> <span class="hafiz-tag">Hafız Dinle</span></h5>
-                                        <p>Mişari Raşid el-Afasi • <span id="audioTimeText">00:00 / 01:28</span></p>
+                            <div class="greeting-row">
+                                <div class="greeting-text">
+                                    <h2>Hayırlı Vakitler</h2>
+                                    <div class="hijri-date-text" id="hijriDateDisplay">12 Cemaziyelevvel 1448 • Yükleniyor...</div>
+                                </div>
+                                <div class="location-pill-badge">
+                                    📍 <span id="homeCityBadge">KADIKÖY</span>
+                                </div>
+                            </div>
+
+                            <div class="widget-label-center">ANA EKRAN WIDGET ÖNİZLEMESİ</div>
+
+                            <div class="dark-navy-widget" id="navyWidgetCard">
+                                <div class="widget-left">
+                                    <div class="moon-gold">🌙</div>
+                                    <div class="vakte-kalan-title">VAKTE KALAN</div>
+                                    <div class="widget-countdown" id="widgetCountdown">00:27:53</div>
+                                    <div id="widgetNextLabel" style="font-size:11px; color:#94a3b8; font-weight:600;">Yatsı 19:40</div>
+                                </div>
+                                <div class="widget-right-cols">
+                                    <div class="w-col" id="wcol-Fajr"><span>İMSAK</span><strong id="wtime-Fajr">05:52</strong></div>
+                                    <div class="w-col" id="wcol-Dhuhr"><span>ÖĞLE</span><strong id="wtime-Dhuhr">12:53</strong></div>
+                                    <div class="w-col" id="wcol-Asr"><span>İKİNDİ</span><strong id="wtime-Asr">15:50</strong></div>
+                                    <div class="w-col active-gold" id="wcol-Maghrib"><span>AKŞAM</span><strong id="wtime-Maghrib">18:20</strong><div class="gold-dot"></div></div>
+                                    <div class="w-col" id="wcol-Isha"><span>YATSI</span><strong id="wtime-Isha">19:40</strong></div>
+                                </div>
+                            </div>
+
+                            <div class="white-prayer-section" id="whitePrayerSection">
+                                <div class="wp-header"><span style="color:#d97706;">🕒</span> Günün Ezan Vakitleri</div>
+                                <div class="wp-grid-6">
+                                    <div class="wp-box" id="box-Fajr"><div class="wp-icon">🌙</div><div class="wp-name">İmsak</div><div class="wp-time" id="btime-Fajr">05:52</div></div>
+                                    <div class="wp-box" id="box-Sunrise"><div class="wp-icon">☀️</div><div class="wp-name">Güneş</div><div class="wp-time" id="btime-Sunrise">07:17</div></div>
+                                    <div class="wp-box" id="box-Dhuhr"><div class="wp-icon">🔆</div><div class="wp-name">Öğle</div><div class="wp-time" id="btime-Dhuhr">12:53</div></div>
+                                    <div class="wp-box" id="box-Asr"><div class="wp-icon">⛅</div><div class="wp-name">İkindi</div><div class="wp-time" id="btime-Asr">15:50</div></div>
+                                    <div class="wp-box active-green" id="box-Maghrib"><div class="wp-icon">🌙</div><div class="wp-name">Akşam</div><div class="wp-time" id="btime-Maghrib">18:20</div></div>
+                                    <div class="wp-box" id="box-Isha"><div class="wp-icon">🌙</div><div class="wp-name">Yatsı</div><div class="wp-time" id="btime-Isha">19:40</div></div>
+                                </div>
+                            </div>
+
+                            <div class="dhikr-mini-card">
+                                <div style="font-size:12px; font-weight:800; color:#64748b;">📿 HIZLI ZİKİRMATİK • SÜBHANALLAH</div>
+                                <div class="dhikr-count-display" id="dhikrCount">0</div>
+                                <div class="dhikr-btns">
+                                    <button type="button" class="dhikr-tap-btn" onclick="incrementDhikr()">Zikir Çek (+1)</button>
+                                    <button type="button" class="dhikr-reset-btn" onclick="resetDhikr()">Sıfırla</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="app-screen" id="screen-dualar">
+                            <div class="sub-header-bar">
+                                <button type="button" class="menu-icon-btn" onclick="openAppScreen('home')" aria-label="Geri">☰</button>
+                                <h3>Dualar & Sureler</h3>
+                                <div class="circle-icon">👤</div>
+                            </div>
+
+                            <div class="app-search-box">
+                                <span>🔍</span>
+                                <input type="text" id="duaSearchInput" placeholder="Dua, sure veya meal ara..." oninput="filterDuas()">
+                            </div>
+
+                            <div class="category-pills-row">
+                                <button type="button" class="cat-pill active" onclick="filterDuaCategory('Tümü', this)">Tümü</button>
+                                <button type="button" class="cat-pill" onclick="filterDuaCategory('Namaz', this)">Namaz</button>
+                                <button type="button" class="cat-pill" onclick="filterDuaCategory('Sabah', this)">Sabah</button>
+                                <button type="button" class="cat-pill" onclick="filterDuaCategory('Akşam', this)">Akşam</button>
+                                <button type="button" class="cat-pill" onclick="filterDuaCategory('Korunma', this)">Korunma</button>
+                            </div>
+
+                            <div class="gunun-duasi-card" id="gununDuasiCard">
+                                <div class="gd-top">
+                                    <span class="gd-badge">Günün Duası</span>
+                                    <span style="color:#143d2b; cursor:pointer;" onclick="showToast('❤️ Favorilere eklendi!')">♡ &nbsp; 🔗</span>
+                                </div>
+                                <div class="gd-title" id="activeDuaTitle">Ayetel Kürsi</div>
+                                <div class="gd-arabic" id="activeDuaArabic">
+                                    اللّٰهُ لَا إِلٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ
+                                </div>
+                                <div class="gd-okunus" id="activeDuaReading">Okunuşu: Allâhü lâ ilâhe illâ hüvel hayyül kayyûm...</div>
+                                <div class="gd-meal" id="activeDuaMeaning">Meali: Allah, kendisinden başka hiçbir ilah olmayandır. Diridir, her şeyin varlığı O'na bağlıdır.</div>
+
+                                <div class="afasi-player-bar">
+                                    <div class="afasi-left">
+                                        <div class="speaker-avatar">🗣️</div>
+                                        <div class="afasi-info">
+                                            <h5><span id="playerTrackTitle">Ayetel Kürsi</span> <span class="hafiz-tag">Hafız Dinle</span></h5>
+                                            <p>Mişari Raşid el-Afasi • <span id="audioTimeText">00:00 / 01:28</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="afasi-controls">
+                                        <button type="button" class="speed-pill" id="speedBtn" onclick="cycleAudioSpeed()">1.0x</button>
+                                        <button type="button" class="green-play-circle ripple-btn" id="audioPlayBtn" onclick="toggleRealDuaAudio()" aria-label="Oynat / Duraklat">▶</button>
                                     </div>
                                 </div>
-                                <div class="afasi-controls">
-                                    <button class="speed-pill" id="speedBtn" onclick="cycleAudioSpeed()">1.0x</button>
-                                    <button class="green-play-circle ripple-btn" id="audioPlayBtn" onclick="toggleRealDuaAudio()" aria-label="Oynat / Duraklat">▶</button>
-                                </div>
+                                <audio id="realQuranAudio" preload="none" src="https://cdn.islamic.network/quran/audio/128/ar.alafasy/262.mp3"></audio>
                             </div>
-                            <audio id="realQuranAudio" preload="none" src="https://cdn.islamic.network/quran/audio/128/ar.alafasy/262.mp3"></audio>
+
+                            <h4 style="font-size: 14.5px; font-weight: 800; color: #143d2b; margin-bottom: 10px;">Önizleme Listesi (<span id="duaCountLabel">6</span>)</h4>
+                            <div class="all-duas-list" id="duasListContainer"></div>
                         </div>
 
-                        <h4 style="font-size: 14.5px; font-weight: 800; color: #143d2b; margin-bottom: 10px;">Önizleme Listesi (<span id="duaCountLabel">6</span>)</h4>
-                        <div class="all-duas-list" id="duasListContainer"></div>
+                        <div class="app-screen" id="screen-kible">
+                            <div class="sub-header-bar">
+                                <button type="button" class="menu-icon-btn" onclick="openAppScreen('home')" aria-label="Geri">←</button>
+                                <h3>Kıble Pusulası</h3>
+                                <div style="width:28px;"></div>
+                            </div>
+
+                            <div class="qibla-top-location-card">
+                                <div class="q-loc-left">
+                                    <div class="q-pin-circle">📍</div>
+                                    <div class="q-loc-text">
+                                        <h4 id="qiblaCityTitle">KADIKÖY, İSTANBUL</h4>
+                                        <p id="qiblaSubInfo">Kıble Açısı: 151° GD • ~2405 km</p>
+                                    </div>
+                                </div>
+                                <div class="degree-pill-orange">
+                                    🧭 <span id="currentDeviceHeading">151°</span>
+                                </div>
+                            </div>
+
+                            <div class="big-compass-container">
+                                <div class="compass-top-notch"></div>
+                                <div class="compass-rotating-dial" id="compassDial">
+                                    <span class="cardinal-dir dir-k">K</span>
+                                    <span class="cardinal-dir dir-d">D</span>
+                                    <span class="cardinal-dir dir-g">G</span>
+                                    <span class="cardinal-dir dir-b">B</span>
+                                    <div class="kabe-badge-marker">KÂBE</div>
+                                </div>
+                                <div class="needle-wrapper" id="compassNeedle">
+                                    <div class="needle-gold-half"></div>
+                                    <div class="needle-grey-half"></div>
+                                    <div class="needle-center-cap"></div>
+                                </div>
+                            </div>
+
+                            <button type="button" class="align-qibla-btn ripple-btn" onclick="alignToExactQibla()">
+                                🧭 Kıbleye Hizala (<span id="btnQiblaDeg">151°</span>)
+                            </button>
+
+                            <div class="calibration-green-card">
+                                <h5>HASSAS SENSÖR KALİBRASYONU</h5>
+                                <p>Telefonunuzu düz tutarak '8' şeklinde çeviriniz ve manyetik etkenlerden uzak durunuz.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-screen" id="screen-esma">
+                            <div class="sub-header-bar">
+                                <button type="button" class="menu-icon-btn" onclick="openAppScreen('home')" aria-label="Geri">←</button>
+                                <h3>99 Esmaül Hüsna</h3>
+                                <div style="width:28px;"></div>
+                            </div>
+                            <div class="app-search-box">
+                                <span>🔍</span>
+                                <input type="text" id="esmaSearchInput" placeholder="İsim veya anlam ara..." oninput="renderEsmaList()">
+                            </div>
+                            <div class="esma-list-container" id="esmaListContainer"></div>
+                        </div>
+
+                        <div class="phone-bottom-nav">
+                            <button type="button" class="b-nav-item active" id="bnav-home" onclick="openAppScreen('home')"><span>🏠</span><span>Ana Sayfa</span></button>
+                            <button type="button" class="b-nav-item" id="bnav-dualar" onclick="openAppScreen('dualar')"><span>📖</span><span>Dualar</span></button>
+                            <button type="button" class="b-nav-item" id="bnav-kible" onclick="openAppScreen('kible')"><span>🧭</span><span>Kıble</span></button>
+                            <button type="button" class="b-nav-item" id="bnav-esma" onclick="openAppScreen('esma')"><span>✨</span><span>Esma</span></button>
+                        </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="app-screen" id="screen-kible">
-                        <div class="sub-header-bar">
-                            <button class="menu-icon-btn" onclick="openAppScreen('home')" aria-label="Geri">←</button>
-                            <h3>Kıble Pusulası</h3>
-                            <div style="width:28px;"></div>
+            <div id="tum-ozellikler" class="more-features-section">
+                <span class="more-highlight-badge">🚀 Geniş Kapsamlı Manevi Yaşam Rehberi</span>
+                <h2 class="section-title scroll-card">Yalnızca Bunlarla Sınırlı Değil; Çok Daha Fazlası Aynur'da!</h2>
+                <p class="section-subtitle scroll-card">Tarayıcıda test ettiğiniz arayüz yalnızca temel ekranları içerir. Aynur'u indirdiğinizde sizi bekleyen tüm özellikler:</p>
+
+                <div class="all-features-grid">
+                    <div class="f-card scroll-card glow-card">
+                        <div class="f-card-icon">🕌</div>
+                        <h4>Diyanet Uyumlu Ezan Vakitleri</h4>
+                        <p>81 il ve dünya genelindeki ilçeler için Diyanet İşleri Başkanlığı takvimine birebir uyumlu kesin vakitler.</p>
+                    </div>
+                    <div class="f-card scroll-card glow-card">
+                        <div class="f-card-icon">📱</div>
+                        <h4>Kilit & Ana Ekran Widget'ları</h4>
+                        <p>Uygulamayı açmadan kalan süreyi ve yaklaşan ezan vaktini telefonunuzun ekranından canlı takip edin.</p>
+                    </div>
+                    <div class="f-card scroll-card glow-card">
+                        <div class="f-card-icon">🔊</div>
+                        <h4>Mişari Raşid el-Afasi Tilavetleri</h4>
+                        <p>Yüksek ses kalitesi, oynatma hızı ayarı, orijinal Arapça metin ve meal açıklamaları.</p>
+                    </div>
+                    <div class="f-card scroll-card glow-card">
+                        <div class="f-card-icon">🧭</div>
+                        <h4>Canlı Sensörlü Kıble Bulucu</h4>
+                        <p>Manyetik pusula sensörleri sayesinde Kâbe'ye doğru kusursuz açı ve kilometre hesabı.</p>
+                    </div>
+                    <div class="f-card scroll-card glow-card">
+                        <div class="f-card-icon">✨</div>
+                        <h4>99 Esmaül Hüsna Rehberi</h4>
+                        <p>Allah'ın 99 isminin teferruatlı izahı, faziletleri, zikir sayıları ve anlık arama desteği.</p>
+                    </div>
+                    <div class="f-card scroll-card glow-card">
+                        <div class="f-card-icon">📿</div>
+                        <h4>Hafızalı Akıllı Zikirmatik</h4>
+                        <p>Kaldığınız adedi saklayan, hedef belirleme imkanı tanıyan ve titreşimli geri bildirim veren tesbih.</p>
+                    </div>
+                    <div class="f-card scroll-card glow-card">
+                        <div class="f-card-icon">🎯</div>
+                        <h4>Günlük Manevi Görev Takibi</h4>
+                        <p>Günün zikirlerini, dualarını ve kişisel ibadet hedeflerinizi düzenli takip edeceğiniz özel sekme.</p>
+                    </div>
+                    <div class="f-card scroll-card glow-card">
+                        <div class="f-card-icon">🔔</div>
+                        <h4>Özelleştirilebilir Ezan Bildirimleri</h4>
+                        <p>Vakit girmeden önce ve tam vaktinde dilediğiniz makamda ezan sesi veya sessiz hatırlatma tonları.</p>
+                    </div>
+                    <div class="f-card scroll-card glow-card">
+                        <div class="f-card-icon">🌙</div>
+                        <h4>Hicri Takvim & Kandil Günleri</h4>
+                        <p>Ramazan, bayramlar, kandiller ve mübarek gecelerin geri sayımıyla entegre İslami takvim.</p>
+                    </div>
+                    <div class="f-card scroll-card glow-card">
+                        <div class="f-card-icon">🌟</div>
+                        <h4>Günün Ayeti, Hadisi ve Duası</h4>
+                        <p>Her güne özel seçilmiş manevi içerikler, sahih hadisler ve tefekkür dolu kısa açıklamalar.</p>
+                    </div>
+                    <div class="f-card scroll-card glow-card">
+                        <div class="f-card-icon">❤️</div>
+                        <h4>Favoriler & Hızlı Paylaşım</h4>
+                        <p>Önem verdiğiniz duaları arşivleyin, tek dokunuşla sevdiklerinizle şık kart formatında paylaşın.</p>
+                    </div>
+                    <div class="f-card scroll-card glow-card">
+                        <div class="f-card-icon">⚡</div>
+                        <h4>Pil Dostu & Hızlı Mimari</h4>
+                        <p>Arka planda pil tüketmeyen, hafif ve akıcı çalışan modern Android mimarisi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-grid" id="iletisim">
+                <div class="info-card scroll-card glow-card">
+                    <h3>Luina Apps Studio</h3>
+                    <p>Kullanıcıların hayatını kolaylaştıran, manevi ve günlük ihtiyaçlara en estetik ve doğru çözümleri sunan yerli bir mobil stüdyodur.</p>
+
+                    <ul class="company-details-list">
+                        <li>📍 <strong>Lokasyon:</strong> İstanbul, Türkiye</li>
+                        <li>📧 <strong>E-Posta:</strong> luina.app@gmail.com</li>
+                        <li>🌐 <strong>Web:</strong> luinaapps.com</li>
+                        <li>📱 <strong>Yayıncı Adı:</strong> Luina Apps (Google Play)</li>
+                    </ul>
+
+                    <div style="margin-top: 22px; display:flex; gap:10px; flex-wrap:wrap;">
+                        <button type="button" class="submit-btn ripple-btn" onclick="copyEmail()">E-Posta Adresini Kopyala</button>
+                        <button type="button" class="hero-secondary-btn ripple-btn" style="padding:12px 20px; font-size:13px;" onclick="show404View()">404 Sayfasını Önizle</button>
+                    </div>
+                </div>
+
+                <div class="info-card scroll-card glow-card">
+                    <h3>Bize Mesaj Gönderin</h3>
+                    <p>Öneri, destek talebi veya iş birliği için formu doldurabilirsiniz:</p>
+
+                    <form class="contact-form-box" id="contactForm" onsubmit="handleFormSubmit(event)" novalidate>
+                        <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+
+                        <div class="form-group">
+                            <label class="form-label" for="formName">Adınız Soyadınız</label>
+                            <input type="text" name="name" class="form-input" id="formName" placeholder="Adınızı giriniz" required>
+                            <span class="error-feedback" id="nameError">Lütfen adınızı ve soyadınızı belirtiniz.</span>
                         </div>
 
-                        <div class="qibla-top-location-card">
-                            <div class="q-loc-left">
-                                <div class="q-pin-circle">📍</div>
-                                <div class="q-loc-text">
-                                    <h4 id="qiblaCityTitle">KADIKÖY, İSTANBUL</h4>
-                                    <p id="qiblaSubInfo">Kıble Açısı: 151° GD • ~2405 km</p>
-                                </div>
-                            </div>
-                            <div class="degree-pill-orange">
-                                🧭 <span id="currentDeviceHeading">151°</span>
-                            </div>
+                        <div class="form-group">
+                            <label class="form-label" for="formEmail">E-Posta Adresiniz</label>
+                            <input type="email" name="email" class="form-input" id="formEmail" placeholder="ornek@mail.com" required>
+                            <span class="error-feedback" id="emailError">Lütfen geçerli bir e-posta adresi giriniz.</span>
                         </div>
 
-                        <div class="big-compass-container">
-                            <div class="compass-top-notch"></div>
-                            <div class="compass-rotating-dial" id="compassDial">
-                                <span class="cardinal-dir dir-k">K</span>
-                                <span class="cardinal-dir dir-d">D</span>
-                                <span class="cardinal-dir dir-g">G</span>
-                                <span class="cardinal-dir dir-b">B</span>
-                                <div class="kabe-badge-marker">KÂBE</div>
-                            </div>
-                            <div class="needle-wrapper" id="compassNeedle">
-                                <div class="needle-gold-half"></div>
-                                <div class="needle-grey-half"></div>
-                                <div class="needle-center-cap"></div>
-                            </div>
+                        <div class="form-group">
+                            <label class="form-label" for="formMessage">Mesajınız</label>
+                            <textarea name="message" class="form-textarea" id="formMessage" rows="3" placeholder="Görüş veya talebiniz..." required></textarea>
+                            <span class="error-feedback" id="messageError">Lütfen en az 10 karakterden oluşan bir mesaj yazınız.</span>
                         </div>
 
-                        <button class="align-qibla-btn ripple-btn" onclick="alignToExactQibla()">
-                            🧭 Kıbleye Hizala (<span id="btnQiblaDeg">151°</span>)
+                        <div class="recaptcha-wrapper">
+                            <div class="g-recaptcha" data-sitekey="6LcvLCwuAAAAAGRhl51fMSzPhEP6LlDggX0qwe4n"></div>
+                        </div>
+
+                        <button type="submit" class="submit-btn ripple-btn" id="contactSubmitBtn">
+                            Mesajı İlet
                         </button>
-
-                        <div class="calibration-green-card">
-                            <h5>HASSAS SENSÖR KALİBRASYONU</h5>
-                            <p>Telefonunuzu düz tutarak '8' şeklinde çeviriniz ve manyetik etkenlerden uzak durunuz.</p>
-                        </div>
-                    </div>
-
-                    <div class="app-screen" id="screen-esma">
-                        <div class="sub-header-bar">
-                            <button class="menu-icon-btn" onclick="openAppScreen('home')" aria-label="Geri">←</button>
-                            <h3>99 Esmaül Hüsna</h3>
-                            <div style="width:28px;"></div>
-                        </div>
-                        <div class="app-search-box">
-                            <span>🔍</span>
-                            <input type="text" id="esmaSearchInput" placeholder="İsim veya anlam ara..." oninput="renderEsmaList()">
-                        </div>
-                        <div class="esma-list-container" id="esmaListContainer"></div>
-                    </div>
-
-                    <div class="phone-bottom-nav">
-                        <button class="b-nav-item active" id="bnav-home" onclick="openAppScreen('home')"><span>🏠</span><span>Ana Sayfa</span></button>
-                        <button class="b-nav-item" id="bnav-dualar" onclick="openAppScreen('dualar')"><span>📖</span><span>Dualar</span></button>
-                        <button class="b-nav-item" id="bnav-kible" onclick="openAppScreen('kible')"><span>🧭</span><span>Kıble</span></button>
-                        <button class="b-nav-item" id="bnav-esma" onclick="openAppScreen('esma')"><span>✨</span><span>Esma</span></button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
 
-        <!-- Tüm Özellikler Bölümü -->
-        <div id="tum-ozellikler" class="more-features-section">
-            <span class="more-highlight-badge">🚀 Geniş Kapsamlı Manevi Yaşam Rehberi</span>
-            <h2 class="section-title scroll-card">Yalnızca Bunlarla Sınırlı Değil; Çok Daha Fazlası Aynur'da!</h2>
-            <p class="section-subtitle scroll-card">Tarayıcıda test ettiğiniz arayüz yalnızca temel ekranları içerir. Aynur'u indirdiğinizde sizi bekleyen tüm özellikler:</p>
-
-            <div class="all-features-grid">
-                <div class="f-card scroll-card glow-card">
-                    <div class="f-card-icon">🕌</div>
-                    <h4>Diyanet Uyumlu Ezan Vakitleri</h4>
-                    <p>81 il ve dünya genelindeki ilçeler için Diyanet İşleri Başkanlığı takvimine birebir uyumlu kesin vakitler.</p>
-                </div>
-                <div class="f-card scroll-card glow-card">
-                    <div class="f-card-icon">📱</div>
-                    <h4>Kilit & Ana Ekran Widget'ları</h4>
-                    <p>Uygulamayı açmadan kalan süreyi ve yaklaşan ezan vaktini telefonunuzun ekranından canlı takip edin.</p>
-                </div>
-                <div class="f-card scroll-card glow-card">
-                    <div class="f-card-icon">🔊</div>
-                    <h4>Mişari Raşid el-Afasi Tilavetleri</h4>
-                    <p>Yüksek ses kalitesi, oynatma hızı ayarı, orijinal Arapça metin ve meal açıklamaları.</p>
-                </div>
-                <div class="f-card scroll-card glow-card">
-                    <div class="f-card-icon">🧭</div>
-                    <h4>Canlı Sensörlü Kıble Bulucu</h4>
-                    <p>Manyetik pusula sensörleri sayesinde Kâbe'ye doğru kusursuz açı ve kilometre hesabı.</p>
-                </div>
-                <div class="f-card scroll-card glow-card">
-                    <div class="f-card-icon">✨</div>
-                    <h4>99 Esmaül Hüsna Rehberi</h4>
-                    <p>Allah'ın 99 isminin teferruatlı izahı, faziletleri, zikir sayıları ve anlık arama desteği.</p>
-                </div>
-                <div class="f-card scroll-card glow-card">
-                    <div class="f-card-icon">📿</div>
-                    <h4>Hafızalı Akıllı Zikirmatik</h4>
-                    <p>Kaldığınız adedi saklayan, hedef belirleme imkanı tanıyan ve titreşimli geri bildirim veren tesbih.</p>
-                </div>
-                <div class="f-card scroll-card glow-card">
-                    <div class="f-card-icon">🎯</div>
-                    <h4>Günlük Manevi Görev Takibi</h4>
-                    <p>Günün zikirlerini, dualarını ve kişisel ibadet hedeflerinizi düzenli takip edeceğiniz özel sekme.</p>
-                </div>
-                <div class="f-card scroll-card glow-card">
-                    <div class="f-card-icon">🔔</div>
-                    <h4>Özelleştirilebilir Ezan Bildirimleri</h4>
-                    <p>Vakit girmeden önce ve tam vaktinde dilediğiniz makamda ezan sesi veya sessiz hatırlatma tonları.</p>
-                </div>
-                <div class="f-card scroll-card glow-card">
-                    <div class="f-card-icon">🌙</div>
-                    <h4>Hicri Takvim & Kandil Günleri</h4>
-                    <p>Ramazan, bayramlar, kandiller ve mübarek gecelerin geri sayımıyla entegre İslami takvim.</p>
-                </div>
-                <div class="f-card scroll-card glow-card">
-                    <div class="f-card-icon">🌟</div>
-                    <h4>Günün Ayeti, Hadisi ve Duası</h4>
-                    <p>Her güne özel seçilmiş manevi içerikler, sahih hadisler ve tefekkür dolu kısa açıklamalar.</p>
-                </div>
-                <div class="f-card scroll-card glow-card">
-                    <div class="f-card-icon">❤️</div>
-                    <h4>Favoriler & Hızlı Paylaşım</h4>
-                    <p>Önem verdiğiniz duaları arşivleyin, tek dokunuşla sevdiklerinizle şık kart formatında paylaşın.</p>
-                </div>
-                <div class="f-card scroll-card glow-card">
-                    <div class="f-card-icon">⚡</div>
-                    <h4>Pil Dostu & Hızlı Mimari</h4>
-                    <p>Arka planda pil tüketmeyen, hafif ve akıcı çalışan modern Android mimarisi.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- İletişim & Canlı Formspree Formu -->
-        <div class="info-grid" id="iletisim">
-            <div class="info-card scroll-card glow-card">
-                <h3>Luina Apps Studio</h3>
-                <p>Kullanıcıların hayatını kolaylaştıran, manevi ve günlük ihtiyaçlara en estetik ve doğru çözümleri sunan yerli bir mobil stüdyodur.</p>
-                
-                <ul class="company-details-list">
-                    <li>📍 <strong>Lokasyon:</strong> İstanbul, Türkiye</li>
-                    <li>📧 <strong>E-Posta:</strong> luina.app@gmail.com</li>
-                    <li>🌐 <strong>Web:</strong> luinaapps.com</li>
-                    <li>📱 <strong>Yayıncı Adı:</strong> Luina Apps (Google Play)</li>
-                </ul>
-
-                <div style="margin-top: 22px;">
-                    <button class="submit-btn ripple-btn" onclick="copyEmail()">E-Posta Adresini Kopyala</button>
-                </div>
-            </div>
-
-            <div class="info-card scroll-card glow-card">
-                <h3>Bize Mesaj Gönderin</h3>
-                <p>Öneri, destek talebi veya iş birliği için formu doldurabilirsiniz:</p>
-                
-                <form class="contact-form-box" id="contactForm" onsubmit="handleFormSubmit(event)" novalidate>
-                    <!-- Spam Koruması (Honeypot) -->
-                    <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
-
-                    <div class="form-group">
-                        <label class="form-label" for="formName">Adınız Soyadınız</label>
-                        <input type="text" name="name" class="form-input" id="formName" placeholder="Adınızı giriniz" required>
-                        <span class="error-feedback" id="nameError">Lütfen adınızı ve soyadınızı belirtiniz.</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="formEmail">E-Posta Adresiniz</label>
-                        <input type="email" name="email" class="form-input" id="formEmail" placeholder="ornek@mail.com" required>
-                        <span class="error-feedback" id="emailError">Lütfen geçerli bir e-posta adresi giriniz.</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="formMessage">Mesajınız</label>
-                        <textarea name="message" class="form-textarea" id="formMessage" rows="3" placeholder="Görüş veya talebiniz..." required></textarea>
-                        <span class="error-feedback" id="messageError">Lütfen en az 10 karakterden oluşan bir mesaj yazınız.</span>
-                    </div>
-
-                    <!-- reCAPTCHA v2 Kutusu -->
-                    <div class="recaptcha-wrapper">
-                        <div class="g-recaptcha" data-sitekey="6Lc5phAuAAAAAIXxhElm77594Z1e5C-AcZDK-tcO"></div>
-                    </div>
-
-                    <button type="submit" class="submit-btn ripple-btn" id="contactSubmitBtn">
-                        Mesajı İlet
-                    </button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Footer -->
         <footer>
             <p>&copy; 2026 Luina Apps Studio. Tüm hakları saklıdır.</p>
             <div class="footer-links">
-                <button class="footer-link-btn" onclick="openModal('privacy')">Gizlilik Politikası</button>
-                <button class="footer-link-btn" onclick="openModal('terms')">Kullanım Koşulları</button>
+                <button type="button" class="footer-link-btn" onclick="openModal('privacy')">Gizlilik Politikası</button>
+                <button type="button" class="footer-link-btn" onclick="openModal('terms')">Kullanım Koşulları</button>
+                <button type="button" class="footer-link-btn" onclick="show404View()">404 Sayfası</button>
             </div>
         </footer>
     </div>
 
-    <!-- Mobil Sabit Alt CTA -->
     <div class="mobile-sticky-cta" id="mobileStickyCta">
         <div class="mobile-sticky-left">
-            <img src="Aynur.png" alt="Aynur Mobil Ezan Vakti Simgesi" class="mobile-sticky-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 40 40\'><rect width=\'40\' height=\'40\' rx=\'10\' fill=\'%23143d2b\'/><text x=\'20\' y=\'26\' font-size=\'18\' text-anchor=\'middle\' fill=\'%23eab308\'>A</text></svg>'">
+            <img src="Aynur.png" alt="Aynur Mobil Ezan Vakti Simgesi" class="mobile-sticky-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 40 40\'><rect width=\'40\' height=\'40\' rx=\'10\' fill=\'%23143d2b\'/><text x=\'20\' y=\'26\' font-size=\'18\' text-anchor=\'middle\' fill=\'%23eab308\'>A</text></svg>'">
             <div class="mobile-sticky-text">
                 <h5>Aynur</h5>
                 <p>Google Play'de Ücretsiz</p>
@@ -1740,27 +1857,25 @@
         </a>
     </div>
 
-    <!-- Çerez Banner'ı -->
     <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-text">
             Sitemizde deneyiminizi iyileştirmek, konum bazlı namaz vakitlerini doğru hesaplamak ve kullanım istatistiklerini anonim analiz etmek için çerezler kullanmaktayız.
         </div>
         <div class="cookie-actions">
-            <button class="cookie-btn-accept" onclick="acceptCookies()">Kabul Et</button>
-            <button class="cookie-btn-reject" onclick="rejectCookies()">Yalnızca Gerekli</button>
+            <button type="button" class="cookie-btn-accept" onclick="acceptCookies()">Kabul Et</button>
+            <button type="button" class="cookie-btn-reject" onclick="rejectCookies()">Yalnızca Gerekli</button>
         </div>
     </div>
 
-    <!-- Modallar (Teşekkür, Gizlilik, Koşullar) -->
     <div class="modal-overlay" id="mainModalOverlay" onclick="closeModalOnBackdrop(event)">
         <div class="modal-card">
-            <button class="modal-close-btn" onclick="closeModal()" aria-label="Kapat">✕</button>
-            
+            <button type="button" class="modal-close-btn" onclick="closeModal()" aria-label="Kapat">✕</button>
+
             <div id="modalThankYou" style="display:none; text-align:center; padding: 20px 0;">
                 <div style="font-size: 54px; margin-bottom: 14px;">✅</div>
                 <h3 style="font-size: 24px; color: var(--emerald-dark); font-weight: 900; margin-bottom: 10px;">Mesajınız Başarıyla İletildi!</h3>
                 <p style="color: var(--text-secondary); line-height: 1.6; font-size: 15px;">Görüş ve önerileriniz Luina Apps Studio ekibine ulaştı. En kısa sürede belirttiğiniz e-posta üzerinden geri dönüş sağlayacağız.</p>
-                <button class="submit-btn" style="margin-top: 24px;" onclick="closeModal()">Tamam</button>
+                <button type="button" class="submit-btn" style="margin-top: 24px;" onclick="closeModal()">Tamam</button>
             </div>
 
             <div id="modalPrivacy" style="display:none;">
@@ -1802,6 +1917,29 @@
             return String(str).replace(/[&<>'"]/g, tag => ({
                 '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
             }[tag] || tag));
+        }
+
+        function show404View() {
+            document.getElementById('mainSiteContent').style.display = 'none';
+            document.getElementById('notFoundView').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function exit404View(e) {
+            if (e && e.currentTarget && e.currentTarget.getAttribute('href') === '#top') {
+                e.preventDefault();
+            }
+            document.getElementById('notFoundView').classList.remove('active');
+            document.getElementById('mainSiteContent').style.display = 'block';
+            if (window.location.hash === '#404') {
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
+        }
+
+        function goToSimulatorFrom404() {
+            exit404View();
+            const simEl = document.getElementById('canli-arayuz');
+            if (simEl) simEl.scrollIntoView({ behavior: 'smooth' });
         }
 
         const particlesLayer = document.getElementById('particlesLayer');
@@ -1870,6 +2008,18 @@
             });
         }
 
+        let dhikrTotal = 0;
+        function incrementDhikr() {
+            dhikrTotal += 1;
+            document.getElementById('dhikrCount').innerText = dhikrTotal;
+            if (navigator.vibrate) navigator.vibrate(25);
+        }
+        function resetDhikr() {
+            dhikrTotal = 0;
+            document.getElementById('dhikrCount').innerText = '0';
+            showToast('📿 Zikirmatik sıfırlandı.');
+        }
+
         const ALL_99_ESMA = [
             { n: 1, tr: "Allah", ar: "الله", m: "Kâinatın tek yaratıcısı ve mutlak sahibi" },
             { n: 2, tr: "Er-Rahmân", ar: "الرَّحْمَنُ", m: "Dünyada bütün mahlûkata merhamet eden" },
@@ -1880,7 +2030,7 @@
             { n: 7, tr: "El-Mü'min", ar: "الْمُؤْمِنُ", m: "Gönüllerde iman ışığını yakan ve güven veren" },
             { n: 8, tr: "El-Müheymin", ar: "الْمُهَيْمِنُ", m: "Her şeyi gözetip koruyan ve kollayan" },
             { n: 9, tr: "El-Azîz", ar: "الْعَزِيزُ", m: "Mutlak güç ve izzet sahibi" },
-            { n: 10, tr: "El-Cebbâr", ar: "الْجَبَّARُ", m: "İradesini her durumda yürüten" },
+            { n: 10, tr: "El-Cebbâr", ar: "الْجَبَّارُ", m: "İradesini her durumda yürüten" },
             { n: 11, tr: "El-Mütekebbir", ar: "الْمُتَكَبِّرُ", m: "Büyüklükte eşi ve benzeri olmayan" },
             { n: 12, tr: "El-Hâlık", ar: "الْخَالِقُ", m: "Her şeyi yoktan var eden" },
             { n: 13, tr: "El-Bâri'", ar: "الْبَارِئُ", m: "Kusursuz ve uyumlu yaratan" },
@@ -2005,7 +2155,7 @@
                 document.getElementById('homeCityBadge').innerText = shortCity;
                 document.getElementById('qiblaCityTitle').innerText = cityName;
 
-                const res = await fetch(`https://api.aladhan.com/v1/timings?latitude=${lat}&longitude=${lng}&method=13`);
+                const res = await fetch(`https://api.aladhan.com/v1/timings?latitude=${encodeURIComponent(lat)}&longitude=${encodeURIComponent(lng)}&method=13`);
                 const json = await res.json();
 
                 if (json && json.data) {
@@ -2119,7 +2269,7 @@
 
             const y = Math.sin(dLon);
             const x = Math.cos(lat1) * Math.tan(lat2) - Math.sin(lat1) * Math.cos(dLon);
-            let brng = toDeg(Math.atan2(y, x));
+            const brng = toDeg(Math.atan2(y, x));
             exactQiblaDegree = Math.round((brng + 360) % 360);
 
             const R = 6371;
@@ -2160,9 +2310,9 @@
 
         function handleOrientation(event) {
             let heading = 0;
-            if (event.webkitCompassHeading) {
+            if (typeof event.webkitCompassHeading === 'number') {
                 heading = event.webkitCompassHeading;
-            } else if (event.alpha !== null) {
+            } else if (typeof event.alpha === 'number') {
                 heading = (360 - event.alpha) % 360;
             }
             if (heading) {
@@ -2254,14 +2404,17 @@
 
         function renderDuasList() {
             const q = (document.getElementById('duaSearchInput').value || '').trim().toLowerCase();
-            const list = DUAS_DATA.filter(d =>
-                (currentCategory === 'Tümü' || d.cat === currentCategory) &&
-                (d.title.toLowerCase().includes(q) || d.mean.toLowerCase().includes(q))
-            );
+            const container = document.getElementById('duasListContainer');
+            const filtered = DUAS_DATA
+                .map((d, idx) => ({ ...d, idx }))
+                .filter(d =>
+                    (currentCategory === 'Tümü' || d.cat === currentCategory) &&
+                    (d.title.toLowerCase().includes(q) || d.mean.toLowerCase().includes(q))
+                );
 
-            document.getElementById('duaCountLabel').innerText = list.length;
-            document.getElementById('duasListContainer').innerHTML = list.map(d => `
-                <div class="dua-mini-item" onclick="selectDuaItem('${escapeHTML(d.title)}')">
+            document.getElementById('duaCountLabel').innerText = filtered.length;
+            container.innerHTML = filtered.map(d => `
+                <div class="dua-mini-item" data-dua-idx="${d.idx}">
                     <div style="display:flex; align-items:center; gap:12px;">
                         <div style="width:34px; height:34px; border-radius:50%; background:#eef5f0; color:#143d2b; display:flex; align-items:center; justify-content:center; font-weight:800;">📖</div>
                         <div>
@@ -2272,6 +2425,13 @@
                     <span style="color:#143d2b; font-weight:800;">▶ &nbsp; ♡</span>
                 </div>
             `).join('');
+
+            container.querySelectorAll('.dua-mini-item').forEach(el => {
+                el.addEventListener('click', () => {
+                    const idx = Number(el.getAttribute('data-dua-idx'));
+                    if (DUAS_DATA[idx]) selectDuaItem(DUAS_DATA[idx].title);
+                });
+            });
         }
 
         function filterDuaCategory(cat, btn) {
@@ -2294,13 +2454,18 @@
             document.getElementById('activeDuaMeaning').innerText = item.mean;
             document.getElementById('playerTrackTitle').innerText = item.title;
             audioEl.src = item.audio;
-            audioEl.play().then(() => { playBtn.innerText = '⏸'; }).catch(() => {});
+            audioEl.playbackRate = speeds[speedIdx];
+            audioEl.play().then(() => { playBtn.innerText = '⏸'; }).catch(() => { playBtn.innerText = '▶'; });
         }
 
         function toggleRealDuaAudio() {
             if (audioEl.paused) {
-                audioEl.play();
-                playBtn.innerText = '⏸';
+                audioEl.play().then(() => {
+                    playBtn.innerText = '⏸';
+                }).catch(() => {
+                    playBtn.innerText = '▶';
+                    showToast("⚠️ Ses dosyası şu an oynatılamadı.");
+                });
             } else {
                 audioEl.pause();
                 playBtn.innerText = '▶';
@@ -2315,6 +2480,7 @@
         });
 
         audioEl.addEventListener('ended', () => { playBtn.innerText = '▶'; });
+        audioEl.addEventListener('error', () => { playBtn.innerText = '▶'; });
 
         const speeds = [1.0, 1.25, 1.5];
         let speedIdx = 0;
@@ -2340,7 +2506,6 @@
             if (name === 'dualar') triggerSkeletonEffect(['gununDuasiCard'], 280);
         }
 
-        /* Formspree AJAX Entegrasyonu & reCAPTCHA Doğrulaması */
         async function handleFormSubmit(e) {
             e.preventDefault();
             const form = document.getElementById('contactForm');
@@ -2372,7 +2537,7 @@
                 msg.classList.remove('is-invalid');
             }
 
-            if (typeof grecaptcha !== 'undefined') {
+            if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.getResponse === 'function') {
                 const captchaResponse = grecaptcha.getResponse();
                 if (!captchaResponse) {
                     showToast("⚠️ Lütfen robot olmadığınızı doğrulayın.");
@@ -2397,7 +2562,7 @@
                 if (response.ok) {
                     btn.classList.remove('btn-loading');
                     form.reset();
-                    if (typeof grecaptcha !== 'undefined') {
+                    if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.reset === 'function') {
                         grecaptcha.reset();
                     }
                     openModal('thankyou');
@@ -2406,7 +2571,7 @@
                 }
             } catch (err) {
                 btn.classList.remove('btn-loading');
-                if (typeof grecaptcha !== 'undefined') {
+                if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.reset === 'function') {
                     grecaptcha.reset();
                 }
                 showToast("❌ Mesaj iletilemedi, lütfen e-posta ile doğrudan ulaşın.");
@@ -2465,9 +2630,16 @@
         }
 
         function copyEmail() {
-            navigator.clipboard.writeText('luina.app@gmail.com').then(() => {
-                showToast("✓ E-posta panoya kopyalandı: luina.app@gmail.com");
-            });
+            const addr = 'luina.app@gmail.com';
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(addr).then(() => {
+                    showToast("✓ E-posta panoya kopyalandı: " + addr);
+                }).catch(() => {
+                    showToast("E-posta adresi: " + addr);
+                });
+            } else {
+                showToast("E-posta adresi: " + addr);
+            }
         }
 
         let scrollTicking = false;
@@ -2476,12 +2648,14 @@
                 window.requestAnimationFrame(() => {
                     const scrollTop = window.scrollY;
                     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                    document.getElementById('scrollProgress').style.width = ((scrollTop / docHeight) * 100) + '%';
+                    const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+                    document.getElementById('scrollProgress').style.width = pct + '%';
                     scrollTicking = false;
                 });
                 scrollTicking = true;
             }
         }, { passive: true });
+
         window.addEventListener('DOMContentLoaded', () => {
             renderEsmaList();
             renderDuasList();
@@ -2492,20 +2666,19 @@
             const h = window.location.hash;
             if (h === '#gizlilik') openModal('privacy');
             if (h === '#kosullar') openModal('terms');
+            if (h === '#404') show404View();
 
-            // Paylaşılan Video Linkini Yakalama ve Uygulamaya Yönlendirme
             const urlParams = new URLSearchParams(window.location.search);
-            const videoId = urlParams.get('videoId');
+            const rawVideoId = urlParams.get('videoId');
 
-            if (videoId) {
-                const intentUrl = `intent://multimedia?videoId=${encodeURIComponent(videoId)}#Intent;scheme=aynur;package=com.aynuremir.app;S.browser_fallback_url=${encodeURIComponent('https://play.google.com/store/apps/details?id=com.aynuremir.app')};end`;
+            if (rawVideoId && /^[a-zA-Z0-9_-]{1,64}$/.test(rawVideoId)) {
+                const intentUrl = `intent://multimedia?videoId=${encodeURIComponent(rawVideoId)}#Intent;scheme=aynur;package=com.aynuremir.app;S.browser_fallback_url=${encodeURIComponent('https://play.google.com/store/apps/details?id=com.aynuremir.app')};end`;
                 showToast("🎬 Aynur uygulamasında video açılıyor...");
                 setTimeout(() => {
                     window.location.href = intentUrl;
                 }, 400);
             }
         });
-
     </script>
 </body>
 </html>
